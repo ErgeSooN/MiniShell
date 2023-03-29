@@ -1,0 +1,31 @@
+
+~ENV~
+
+char **env değişkeni, ana programın çalıştığı ortamın değişkenlerini tutan bir karakter dizileri dizisidir. 
+Bu değişken, örneğin PATH veya HOME gibi ortam değişkenlerinin değerlerini içerir.
+
+Çalışma zamanında programın çalıştığı ortam, bir dizi önceden tanımlanmış değişken içerir. 
+Bu değişkenler, örneğin kullanıcının ev dizini, çalıştırılabilir dosyaların yolları gibi sistem ayarlarını depolar.
+
+env değişkeni, bu ortam değişkenlerinin isim ve değerlerini içeren bir karakter dizileri dizisidir.
+Bu değişken, programın bu ortam değişkenlerinin değerlerine erişmesine olanak sağlar.
+
+Örneğin, getenv() fonksiyonu kullanılarak env değişkenindeki bir belirli ortam değişkeninin değerine erişilebilir. 
+Bu fonksiyon, bir ortam değişkeninin adını alır ve bu değişkenin değerini döndürür.
+
+#include <stdlib.h>
+#include <stdio.h>
+
+/*-----------------------------------------------------*/
+
+int main(int argc, char **argv, char **env) 
+{
+    char *path_value = getenv("PATH");
+    printf("PATH variable value is: %s\n", path_value);
+    return 0;
+}
+
+/*-----------------------------------------------------*/
+
+Bu örnek kod, getenv() fonksiyonunu kullanarak PATH ortam değişkeninin değerini alır ve ekrana yazdırır. 
+Env değişkeni, programın bu tür işlevleri gerçekleştirmesine olanak tanır.
