@@ -29,3 +29,39 @@ int main(int argc, char **argv, char **env)
 
 Bu örnek kod, getenv() fonksiyonunu kullanarak PATH ortam değişkeninin değerini alır ve ekrana yazdırır. 
 Env değişkeni, programın bu tür işlevleri gerçekleştirmesine olanak tanır.
+
+
+~READLİNE~
+
+
+/*-----------------------------------------*/
+
+readline("\033[0;34mminishell-> \033[0m"); 
+
+/*-----------------------------------------*/
+
+c dilinde bu fonksiyon ne iş yapar
+
+Bu C dilindeki readline fonksiyonu, kullanıcının klavyeden girilen satırları okumak ve depolamak için kullanılan bir işlevdir. 
+Fonksiyon, önceden yapılandırılmış bir girdi akışı kullanarak satırları okur.
+
+Burada verilen argümanlar, okunan satırın öncesine yazdırılacak bir dize içerir. 
+Bu örnek kodda "\033[0;34mminishell-> \033[0m" dizisi, terminal ekranında "minishell->" ifadesinin mavi renkte görünmesini 
+sağlayan bir ANSI kaçış dizisi içerir. Böylece, kullanıcının girdiği satır bu ifadenin hemen sağında görüntülenir.
+
+Bu işlev, "readline" kütüphanesinin bir parçasıdır ve kullanıcının okuduğu satırları bellekte depolamak 
+için kullanılan "history" kütüphanesiyle birlikte kullanılabilir.
+
+
+\033: ESCAPE karakterinin ASCII kodu olan 27'yi temsil eder. 
+Bu karakter bir kontrol karakteridir ve terminal ekranında renk gibi farklı efektler oluşturmak için kullanılır.
+
+[0;34m: Bu, ANSI renk kodlamasıdır ve "\033[" karakter dizisinin devamında gelir. 
+[0;34m ifadesi, mavi bir renk için bir renk kodu belirtir. "0;" kısmı, stil kodlamasıdır ve 0, stil olmadığını gösterir.
+
+minishell->: Bu, terminal ekranında görüntülenecek olan metni temsil eder.
+
+\033[0m: Bu da ANSI renk kodlamasıdır. [0m ifadesi, renk kodlarının bittiğini gösterir ve normal metin rengine geri dönmek için kullanılır. 
+Bu kodlama, ANSI renk kodlarının bir sonraki kullanımı için varsayılan ayarları yeniden yükler.
+Birleştirildiğinde, bu ANSI kaçış dizileri, terminal ekranında "minishell->" ifadesinin mavi renkte görüntülenmesini ve 
+girdi satırlarının bu ifadenin hemen sağında yazdırılmasını sağlar.
