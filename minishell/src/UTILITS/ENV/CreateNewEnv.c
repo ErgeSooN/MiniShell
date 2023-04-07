@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   CreateNewEnv.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:33:30 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:33:30 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/04/07 21:57:24 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
 
-/*
-	It does fill the envs (it gets from main third parameter) to linked list.
-*/
+/*Main fonksiyonundaki 3. parametreyi bağlı listeye yerleştirir(doldurur).*/
 void	fill_envs(char **env)
 {
 	while (env && *env)
@@ -22,8 +20,9 @@ void	fill_envs(char **env)
 }
 
 /*
-	Firstly it creates first node If there are nothing in the linked list.
-	Then it connects nodes to each other when it takes new one.
+	Eğer bağlı liste yoksa kendisi oluşturur ve ilkk başta çevresel değikeni alır. 
+	Daha sonra '=' den sonrasında karakter var mı kontrol edilir eğer varsa ft_strdup ile
+	son düğümğn contentine kopyalanır.
 */
 t_env	*add_newenv(t_env **env_table, char *env)
 {

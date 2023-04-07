@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   GetEnvName.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:33:41 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:33:41 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/04/07 21:57:57 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
 
+/*Çevresel değişkenlere malloc ile yer ayırıp bunları hafızada tutup geri dödürüyoruz*/
 char	*get_env_name(char *content)
 {
 	int		env_name_len;
@@ -29,6 +30,7 @@ char	*get_env_name(char *content)
 	return (name);
 }
 
+/*malloc ile yer açmak için oluşturduğumuz bir fonksiyon. Bir nevi strlen diyebiliriz.*/
 int	get_env_name_count(char *env_arg)
 {
 	int	count;

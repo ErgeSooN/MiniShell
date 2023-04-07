@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   SetMetachars.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:34:18 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:34:18 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/04/07 21:58:25 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
 
+/*Metakarakterleri tanımlama yapıp meta_list değişkeninin içine atama yapıyor*/
 void	set_metachars(void)
 {
 	char	**meta_list;
