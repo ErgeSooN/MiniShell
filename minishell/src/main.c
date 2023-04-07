@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:50 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/27 19:55:10 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/04/07 21:55:33 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/minishell.h"
 
-void	init_core(char **env)
+void	init_core(char **env) //deneme
 {
 	fill_envs(env);
 	set_metachars();
