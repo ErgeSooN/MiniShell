@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   CompareMetachars.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:34:12 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:34:12 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/04/28 20:17:40 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
+
+/*
+  Metakarakterlerin karşılaştırmasını yapar. Karşılaştırmayı da bizim önceden 
+  tanımladığımız metakarakterler ile karşılaştırır eğer bir eşleşme var ise 
+  eşleşmeyi dööndürür eğer eşleşme yok ise NULL döndürür.
+*/
 
 char	*compare_metachars(char *cmd_line)
 {
