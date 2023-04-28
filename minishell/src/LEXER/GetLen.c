@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   GetLen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:31 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:30:31 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/04/28 01:14:41 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
+
+/*
+  bu fonksiyon girilen metindeki ilk karakter ile diğer karakterleri 
+  karşılaştırıyor eğer bir eşitlik var ise o uzunluğu döndürüyor. Örnek
+  olarak "ali eren"asd metnini kullanabiliriz. Buradaki uzunluk değeri 9'dur.
+*/
 
 size_t	get_quotelen(char *cmd_line)
 {
