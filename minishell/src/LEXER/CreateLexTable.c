@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   CreateLexTable.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:23 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:30:23 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/05/01 10:44:40 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
+
+/*
+  komut satırının ilk parçasını last_node düğümüne kopyalar ve
+  komut satırını boşluk karakterinden sonraki kısma kaydırır.
+*/
 
 void	parse_cmd(char **cmd_line, t_lexlist *last_node)
 {
@@ -24,6 +29,11 @@ void	parse_cmd(char **cmd_line, t_lexlist *last_node)
 	while (count--)
 		*(holder_content++) = *((*cmd_line)++);
 }
+
+/*
+  Bu fonksiyonun amacı, komut satırını parçalara ayırmak ve
+  bunları bir liste halinde saklamaktır. Bu şekilde komut satırını daha kolay işleyebilirsiniz.
+*/
 
 void	create_lexlist(char *cmdline, t_lexlist **lex_table)
 {

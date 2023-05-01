@@ -6,7 +6,7 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:31 by bbolat            #+#    #+#             */
-/*   Updated: 2023/04/28 01:14:41 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/01 10:25:49 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ size_t	get_quotelen(char *cmd_line)
 	}
 	return (count);
 }
+
+/*
+  Bu fonksiyon terminale girilen komut satırının uzunluğunu alır.
+  bu kodu yapma sebeplerimiz arasında malloc ile yer açmak için uzunluğu bulmak.
+*/
 
 size_t	get_cmdlen(char *cmd_line)
 {
