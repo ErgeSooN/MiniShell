@@ -6,7 +6,7 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:33:59 by bbolat            #+#    #+#             */
-/*   Updated: 2023/05/02 14:13:06 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/02 20:11:21 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	print_lex_error(t_lexlist *lex_list)
 	return (0);
 }
 
-/* Hata çıktısı sağladığımız fonksiyon. */
+/* Hata çıktısı sağladığımız fonksiyon.*/
+
 
 void	print_error(char *ptr1, char *ptr2, char *ptr3)
 {
