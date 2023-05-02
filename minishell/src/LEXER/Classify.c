@@ -6,19 +6,17 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:11 by bbolat            #+#    #+#             */
-/*   Updated: 2023/05/01 15:16:09 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/02 11:25:55 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
 
 /*
-							## (*METACHARS - 1) ##
-  Metachars - 1 demenin sebebi, metachars dizisinin ilk karakterinin ‘\0’ olması 
-  ve bu karakterin tipini belirlemek istemediğimiz için olabilir. 
-  Bu şekilde, metachars dizisindeki diğer karakterlerin tipleri 0’dan başlayarak sıralanır.  
-  Eğer metachars - 1 demeseydik, lex_table->type alanına ‘\0’ karakterinin tipini atamış olurduk. 
-  Bu da istemediğimiz bir durum olurdu.
+                                        ## (*METACHARS - 1) ##
+  Metachars - 1 demenin sebebi, '>>' ve '<<' metakarakterlerde ascii kodu tek '<' '>' 2 ile çarpıldığı için 
+  '|' karakteri ile çakışma oluyor ama biz bunu istemediğimiz için hepsini 1 eksiltiyoruz ve bu sefer çakışma
+  ortadan kalkıyor.
 */
 
 /*
