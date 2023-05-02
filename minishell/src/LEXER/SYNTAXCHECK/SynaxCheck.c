@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SynaxCheck.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:27 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:31:27 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/05/02 12:26:05 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ void	syntax_check(void)
 			lex_list = NULL;
 	}
 }
+
+/*
+  
+*/
 
 int	syntax_error_check(t_lexlist *lex_list)
 {

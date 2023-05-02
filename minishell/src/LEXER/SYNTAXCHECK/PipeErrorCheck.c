@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   PipeErrorCheck.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:23 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:31:23 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/05/02 12:33:37 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
+
+/*
+  
+*/
 
 int	pipe_error_check(t_lexlist *lex_list)
 {
