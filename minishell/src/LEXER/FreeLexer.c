@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FreeLexer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:38 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:30:38 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/05/02 14:13:28 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ int	skip_heradoc(t_lexlist **lex, t_lexlist **temp, t_lexlist *stop, int *flag)
 	}
 	return (0);
 }
+
+/*
+  
+*/
 
 void	free_lexer_without_heradoc(t_lexlist *stop_list)
 {
