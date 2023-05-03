@@ -12,6 +12,15 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	expand_text -> Her karakteri tarar. her karakterin tipine göre 
+	farklı işlemler yapar. Tek tırnak ya da çift tırnak
+	işaretiyle çevrelenmiş metinleri ve $ veya ~ karakterleriyle başlayan
+	metinleri tespit eder.
+	Bu metinler daha sonra ilgili genişletme işlevine gönderilir
+	sonuç, ilgili karakter yerine yerleştirilir.
+*/
+
 void	expand_values_from_lexlist(void)
 {
 	t_lexlist	*lex_table;

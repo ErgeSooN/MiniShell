@@ -12,6 +12,11 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	expand_dollar -> $ karakteriyle başlayan bir metnin, hangi değişkeni temsil 
+	ettiğine bağlı olarak gerekli işlevleri çağırır.
+*/
+
 void	expand_dollar(char **dst, char **src)
 {
 	char	*ptr;

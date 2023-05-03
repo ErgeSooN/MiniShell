@@ -12,6 +12,13 @@
 
 #include "../../Include/minishell.h"
 
+/*
+	expander => parser tarafından belirlenen parametreleri genişletir ve komutu
+	çalıştırmak için gereken bilgileri toplar.
+	örneğin "~/tmp" -> "/home/kullanıcıadı/tmp"
+			"ls *" -> ls'i tüm dosya ve klasörlerle çalışacak şekilde genişletir.
+*/
+
 void	expander(void)
 {
 	if (g_core.exec_output == 2)

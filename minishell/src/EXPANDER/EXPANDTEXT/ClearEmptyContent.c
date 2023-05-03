@@ -12,6 +12,11 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	Lexer tarafından oluşturulan listedeki boş olan lex listelerini (tokenları) siler. 
+	Listede gereksiz ve boş bir dizi elemanın kalmasını önlemeye yardımcı olur.
+*/
+
 void	clear_void_contents(void)
 {
 	t_lexlist	*lex_list;
