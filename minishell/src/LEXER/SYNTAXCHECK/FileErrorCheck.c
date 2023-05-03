@@ -6,11 +6,17 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:15 by bbolat            #+#    #+#             */
-/*   Updated: 2023/05/02 13:12:01 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/03 11:03:39 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
+
+/*
+  Komut satırına girilen son karakter text türünde değil ise 258 hata kodunu
+  döndürür ve free_lexer_without_heradoc fonksiyonuna yönlendirme yapar.
+  Bu fonksiyon bizim bizim terminalde girdiğimiz karakterleri kontrol etmemizi sağlar.
+*/
 
 int	file_error_check(t_lexlist *lex_list)
 {
