@@ -12,6 +12,32 @@
 
 #include "../../Include/minishell.h"
 
+/*
+	create_cmdtable-> shell programının bir komut satırında işlem yapmak 
+	üzere gerekli olan komutların listesi olan bir komut tablosu oluşturur. 
+	Her öğeyi inceleyerek, eğer öğe boru(pipe)karakteri ise, yeni bir
+	komutun başlangıcını işaret eder. Kaç adet komut olacağını belirler.
+	
+	create_cmdtable_nodes -> belirli bir sayıda komut düğümü oluşturur. 
+	Her bir komut düğümünün varsayılan değerlerini ayarlamak için fill_cmdtable_node
+	işlevini kullanır.
+
+	fill_cmdtable_node -> bir t_cmdlist yapısının varsayılan değerlerini ayarlar.
+	Bu yapının üyeleri, bir komutun gerektirdiği özellikleri tutar.
+	Örn - komut dosyasının tam yolu, dosyaların listesi, standart giriş/çıkış tanımlayıcıları gibi.
+*/
+
+/*
+	pid-> İşlem kimliği (PID)-işlem yürütüldüğünde atanır
+	infile-> Standart giriş dosyası tanımlayıcısı
+	outfile-> Standart çıkış dosyası tanımlayıcısı
+	cmd-> Komut satırı argümanları
+	path-> Komut dosyasının tam yolu
+	next-> Bir sonraki komut düğümüne işaretçi
+	files-> İlgili dosyaların listesi
+	heradoc_values-> Heredoc verilerinin listesi
+*/
+
 void	create_cmdtable(t_lexlist *lex_table)
 {
 	int		count;
