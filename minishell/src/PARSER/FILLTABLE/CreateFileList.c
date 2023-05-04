@@ -12,6 +12,20 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	create_new_filelist -> t_cmdlist yapısındaki bir düğüm ve t_lexlist yapısındaki
+	bir işaretçi alır. Düğüm yürütülecek olan komutu ve ilgili dosya listesini içerir.
+	İşaretçi komut dizisindeki metinleri ve özel karakterleri içeren bir liste işaretçisidir.
+
+	(*lex_list)->next işaretçisi kullanılarak dosya adı içeriği elde edilir ve filename 
+	değişkenine atanır. Ancak, (*lex_list)->next NULL işaretçisi ise, dosya adı atanmaz.
+
+	add_filelist -> Dosya listesine yeni bir dosya eklenir. Bu yeni dosyanın dosya adı,
+	filename değişkeninden ve özel karakter, (*lex_list)->content işaretçisi içeriğinden elde edilir. 
+
+	temp_filelist->> işaret edilen dosyanın özellikleri ayarlar.
+*/
+
 int	create_new_filelist(t_cmdlist *node, t_lexlist **lex_list)
 {
 	char		*meta;
