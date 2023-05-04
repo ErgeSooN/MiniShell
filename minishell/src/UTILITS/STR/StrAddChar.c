@@ -12,6 +12,10 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	str_addchar -> verilen bir karakter dizisine yeni bir karakter ekler.
+*/
+
 void	str_addchar(char **dst, char c)
 {
 	char	*ptr;

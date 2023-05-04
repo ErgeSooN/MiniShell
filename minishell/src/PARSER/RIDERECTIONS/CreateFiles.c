@@ -12,6 +12,11 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	create_files -> t_cmdlist yapısındaki her bir komut için dosya oluşturma 
+	işlemlerini yapar.
+*/
+
 void	create_files(t_cmdlist *node)
 {
 	t_filelist	*temp_file;

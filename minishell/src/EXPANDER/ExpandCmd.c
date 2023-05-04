@@ -12,6 +12,16 @@
 
 #include "../../Include/minishell.h"
 
+/*
+	expand_cmd ->  verilen bir komut satırı argümanının PATH çevresel değişkenindeki 
+	değerlerle genişletilmesini sağlar.
+
+	expand_from_env_value -> Komut yürütüldüğünde kullanılan PATH değişkeninin değerini genişletmek 
+	için kullanılır.
+
+	?????
+*/
+
 void	expand_cmd(char **dst)
 {
 	t_env	*temp_env;
