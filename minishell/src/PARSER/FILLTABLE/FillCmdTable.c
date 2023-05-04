@@ -12,6 +12,13 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	fill_cmdtable -> fill_cmdnode ile düğümlere komut öğelerini ekler.
+	
+	fill_cmdnode -> komut düğümünün yolunu (path) oluşturmak için kullanılır.
+	Bunu create_path işlevini kullanarak yapar.
+*/
+
 void	fill_cmdtable(void)
 {
 	t_cmdlist	*temp_cmdtable;

@@ -12,6 +12,12 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	create_path -> Bir t_lexlist listesinin type'ı TEXT olan öğelerinin sayısını
+	hesaplar ve bu sayı kadar boyutlu bir char tipi çift işaretçisi (char **) oluşturur.
+	Bu işaretçi, komutun yolunu (path) ve argümanlarını tutmak için kullanılacak.
+*/
+
 char	**create_path(t_lexlist *lex_list)
 {
 	int		count;

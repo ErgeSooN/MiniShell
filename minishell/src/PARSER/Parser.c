@@ -12,6 +12,12 @@
 
 #include "../../Include/minishell.h"
 
+/*
+	Lexer tarafından ayıklanan parçaları kullanarak geçerli komut satırı oluşturur.
+	Parçaları inceler ve bu parçaların anlamlı bir bütün oluşturduğundan emin olur.
+	örn - cd komutu için bir parametre alacğı belirlenir.
+*/
+
 void	parser(void)
 {
 	g_core.cmd_table = NULL;
