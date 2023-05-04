@@ -6,11 +6,13 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:38 by bbolat            #+#    #+#             */
-/*   Updated: 2023/05/03 11:59:27 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/03 21:29:30 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
+
+/*bu fonksiyon bizim << karakterini atlamamızı sağlar.*/
 
 int	skip_heradoc(t_lexlist **lex, t_lexlist **temp, t_lexlist *stop, int *flag)
 {
@@ -29,7 +31,8 @@ int	skip_heradoc(t_lexlist **lex, t_lexlist **temp, t_lexlist *stop, int *flag)
 
 /*
   Eğer file_error_check fonksiyonunda if döngünün içerisine girilirse bu 
-  fonksiyona gelinir 
+  fonksiyona gelinir. Eğer skip_heradoc 1 döndürürse while tekrarlanır.
+  Eğer 0 döndürürse lexer içinde geze geze freeleme işlemi yapar.
 */
 
 void	free_lexer_without_heradoc(t_lexlist *stop_list)

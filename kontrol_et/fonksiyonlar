@@ -1,1 +1,3 @@
-classify  => bu fonksiyonda "metachars - 1" ne anlama geliyor
+classify  => bu fonksiyonda "metachars - 1" ne anlama geliyor 
+    cevabı => buradaki -1 olayı >> de asciikodunu ikiyle çarptığımızda pipe karakteriyle çelişiyor ondan dolayı
+            çelişme olmasın diye tüm metakarakterleri 1 eksiltiyoruz.

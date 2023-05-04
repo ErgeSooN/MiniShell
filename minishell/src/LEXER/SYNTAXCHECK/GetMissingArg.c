@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   GetMissingArg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbolat <bbolat@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:19 by bbolat            #+#    #+#             */
-/*   Updated: 2023/01/19 13:31:19 by bbolat           ###   ########.fr       */
+/*   Updated: 2023/05/03 23:52:34 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
+
+/*
+  
+*/
 
 char	*get_missing_arg(void)
 {
@@ -48,6 +52,8 @@ int	read_missing_arg(int *fd)
 	return (1);
 }
 
+/**/
+
 void	read_missing_arg_value(int *fd)
 {
 	char	*ptr;
@@ -67,6 +73,8 @@ void	read_missing_arg_value(int *fd)
 		exit(EXIT_SUCCESS);
 	}
 }
+
+/*Eğer argüman bulunmuyorsa freeleyip fonksiyondan çıkılır.*/
 
 int	control_valid_arg(char *ptr)
 {

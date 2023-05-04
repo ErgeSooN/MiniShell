@@ -6,7 +6,7 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:23 by bbolat            #+#    #+#             */
-/*   Updated: 2023/05/02 12:33:37 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/03 21:46:40 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int	pipe_error_check(t_lexlist *lex_list)
 		return (run_miss_arg(lex_list));
 	return (1);
 }
+
+/* 
+  Eğer pipe karakterinden sonra başka bir argüman girilmemiş ise
+  bu fonksiyona girilir. 
+*/
 
 int	run_miss_arg(t_lexlist *lex_list)
 {
