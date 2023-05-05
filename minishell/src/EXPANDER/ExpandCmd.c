@@ -17,9 +17,15 @@
 	değerlerle genişletilmesini sağlar.
 
 	expand_from_env_value -> Komut yürütüldüğünde kullanılan PATH değişkeninin değerini genişletmek 
-	için kullanılır.
+	için kullanılır. her yolun sonunda ':' karakteriyle bittiği varsayımına dayanarak çalışır.
+	yani -> /usr/bin:/bin:/usr/sbin:/sbin bu gibi PATH'i gezer.
 
-	?????
+	get_arg_from_env_value -> , PATH değişkeninin bir parçasını ve genişletilecek bir argüman adını alır. 
+	':' karakterine kadar olan tüm karakterleri ptr'ye kopyalar. Sonra ptr'ye "/" karakteri eklenir.
+
+	access -> kullanıcının dosyayı okuyabilme yetkisine sahip olup olmadığını kontrol eder. 
+	işlem yapılabiliyorsa 0, yapılamıyorsa -1 döner ve errno değişkeni ayarlanır.
+	F_OK -> existence(varoluş)
 */
 
 void	expand_cmd(char **dst)
