@@ -12,6 +12,14 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	create_infile -> girdi dosyası bağlantısı oluşturur. getcwd fonksiyonu çağrılarak 
+	geçerli çalışma dizininin adı alınır ve dosya adı ile birleştirilir. Dosya adı ve
+	yolunun tam adı pwd'de saklanır. Erişim kontrolü yapılır ve dosyanın varlığı kontrol 
+	edilir. O_RDONLY flag'iyle açılır ve file->fd'ye atanır. Dosya mevcut değilse 
+	hata mesajı yazdırılır.
+*/
+
 void	create_infile(t_cmdlist *node, t_filelist *file)
 {
 	char	*pwd;
