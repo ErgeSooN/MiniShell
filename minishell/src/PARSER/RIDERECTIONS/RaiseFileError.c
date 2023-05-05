@@ -12,6 +12,21 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	raise_file_error -> bir dosya açma hatası oluştuğunda, dosyanın açılmamasını ve
+	hata mesajının yazdırılmasını sağlar.
+	Dosyanın dizin hatasını kontrol eder. 
+	(") -> "-bash: : No such file or directory" hata mesajını yazdırır.
+	($) -> belirsiz bir yönlendirmeye işaret eden "-bash: [dosya adı]: ambiguous redirect" 
+	hata mesajını yazdırır.
+	Dosya açma hatası oluştuğunda, file->fd, SSTDERR (standard error stream) değerine atanır
+	ve *file_output da SSTDERR değerine eşitlenir.
+
+	check_directory_error ->verilen dosya adının bir dizin olup olmadığını kontrol eder. 
+	Eğer en az bir '/' karakteri varsa, ad bir dizin olarak kabul edilir ve hataya yol açar. 
+	Eğer yoksa, ad bir dosya adı olarak kabul edilir ve işlem devam eder.
+*/
+
 int	check_directory_error(char *file_name)
 {
 	char	*temp_file_name;

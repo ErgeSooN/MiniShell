@@ -12,6 +12,16 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	create_outfile -> node yapısında verilen outfile dosyasının yolunu oluşturmak 
+	ve dosyayı açmak için kullanılır. Dosya yolu, mevcut çalışma dizininin 
+	(current working directory(CWD))başına '/' karakteri ekleyerek ve dosya adını da 
+	ekleyerek oluşturulur. Dosya metacharacter'ı DOUBLE_GREAT ise dosya açılır.
+	O_APPEND bayrağı -> dosyanın sonuna eklenmesi gerektiğini belirtir 
+	O_TRUNC bayrağı -> dosyayı üzerine yazacak şkeilde açılmasını belirtir.
+	node->outfile değeri, açılan dosyanın dosya tanımlayıcısı (fd) ile güncellenir.
+*/
+
 void	create_outfile(t_cmdlist *node, t_filelist *file)
 {
 	char	*outfile_path;
