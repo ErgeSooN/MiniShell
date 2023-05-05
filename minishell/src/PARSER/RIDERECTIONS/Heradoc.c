@@ -12,6 +12,26 @@
 
 #include "../../../Include/minishell.h"
 
+
+/*
+	run_heradocs -> stdin'den gelen girdiyi yönlendirmek 
+	için << bulunana kadar bir komut listesindeki dosya listesinde dolaşır. 
+	Heredoc bulunduğunda, ilgili komut listesi düğümü ve dosya listesi düğümü,
+	read_heradoc() fonksiyonuna geçirilir.
+
+	read_heradoc -> heredoc'u okur ve içeriğini bir dize olarak kaydeder. 
+
+	fill_heradoc -> Fork işleminde çağrılır ve bir child process yaratır. Belirtilen EOF belirtecine
+	kadar standart girdiden girdi okur ve geçici bir dosyaya yazar. Sonra bu dosyanın içeriği
+	parent processe geri döndürülür.
+
+	set_heradoc_value -> Heradoc değerlerini almak ve node yapısına kaydetmek için kullanılır.
+
+	get_heradoc_values -> kullanıcı tarafından girilen heradoc değerlerini okumak için kullanılır.
+	'>' karakteriyle başlayan bir satır okunur ve eof karakterine kadar olan tüm satırlar bir char 
+	dizisinde birleştirilir.
+*/
+
 void	run_heradocs(t_cmdlist *node)
 {
 	t_filelist	*temp_file;
