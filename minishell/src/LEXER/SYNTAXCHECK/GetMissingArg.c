@@ -13,7 +13,8 @@
 #include "../../../Include/minishell.h"
 
 /*
-  
+  Bu fonksiyonda fd karakterine 2 lik dizi oluşturulup pipe ile birbirine
+  köprüleme işlemi yapılır
 */
 
 char	*get_missing_arg(void)
@@ -31,6 +32,10 @@ char	*get_missing_arg(void)
 	close(fd[0]);
 	return (ptr);
 }
+
+/*
+  
+*/
 
 int	read_missing_arg(int *fd)
 {
@@ -53,14 +58,19 @@ int	read_missing_arg(int *fd)
 }
 
 /*
-	Bu fonksiyon, bir dosya tanımlayıcısı (file descriptor) dizisi alan bir işlevdir. 
-	Dizinin ilk elemanı, verilerin okunacağı dosyanın tanımlayıcısıdır ve ikinci elemanı, 
-	verilerin yazılacağı dosyanın tanımlayıcısıdır. Fonksiyon, öncelikle yazma işlemi için 
-	kullanılan dosya tanımlayıcısını kapatır ve sonra sonsuz bir döngüye girer. Döngü içinde, 
-	kullanıcıdan bir girdi alınır ve bu girdi bir dizi doğrulama işleminden geçirilir. 
-	Eğer girdi geçerliyse, veriler yazılacak olan dosyanın tanımlayıcısına yazılır ve yazma işlemi tamamlanır. 
-	Ardından, dosya tanıml+ayıcısı kapatılır, kullanıcının girdisi kaydedilir ve bellekten serbest bırakılır. 
-	Son olarak, döngüden çıkılır ve program başarıyla sonlandırılır.
+  Bu fonksiyon, bir dosya tanımlayıcısı (file descriptor) dizisi alan bir işlevdir. 
+  Dizinin ilk elemanı, verilerin okunacağı dosyanın tanımlayıcısıdır ve ikinci elemanı, 
+  verilerin yazılacağı dosyanın tanımlayıcısıdır. Fonksiyon, öncelikle yazma işlemi için 
+  kullanılan dosya tanımlayıcısını kapatır ve sonra sonsuz bir döngüye girer. Döngü içinde, 
+  kullanıcıdan bir girdi alınır ve bu girdi bir dizi doğrulama işleminden geçirilir. 
+  Eğer girdi geçerliyse, veriler yazılacak olan dosyanın tanımlayıcısına yazılır ve yazma işlemi tamamlanır. 
+  Ardından, dosya tanımlayıcısı kapatılır, kullanıcının girdisi kaydedilir ve bellekten serbest bırakılır. 
+  Son olarak, döngüden çıkılır ve program başarıyla sonlandırılır.
+*/
+
+/*
+  Bu fonksiyon bizim | operatörnden sonra girdi almamızı sağlayan ve bu alınan girdiyi kontrol etmemizi
+  sağlayan fonksiyondur. Readline fonksiyonu ile okuma yaptıktan sonra geçerli bir argüman yok ise 
 */
 
 void	read_missing_arg_value(int *fd)
@@ -83,7 +93,10 @@ void	read_missing_arg_value(int *fd)
 	}
 }
 
-/*Eğer argüman bulunmuyorsa freeleyip fonksiyondan çıkılır.*/
+/*
+  Eğer argüman bulunmuyorsa return 0 döndürülür daha sonra ptr str ye aktarılır çünkü ptr değişmesin.
+  str deki boşlukları atladıktan sonra  str boş ise ptryi freeleyip return 0 döndürüyoruz.
+*/
 
 int	control_valid_arg(char *ptr)
 {
