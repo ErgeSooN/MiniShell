@@ -52,7 +52,16 @@ int	read_missing_arg(int *fd)
 	return (1);
 }
 
-/**/
+/*
+	Bu fonksiyon, bir dosya tanımlayıcısı (file descriptor) dizisi alan bir işlevdir. 
+	Dizinin ilk elemanı, verilerin okunacağı dosyanın tanımlayıcısıdır ve ikinci elemanı, 
+	verilerin yazılacağı dosyanın tanımlayıcısıdır. Fonksiyon, öncelikle yazma işlemi için 
+	kullanılan dosya tanımlayıcısını kapatır ve sonra sonsuz bir döngüye girer. Döngü içinde, 
+	kullanıcıdan bir girdi alınır ve bu girdi bir dizi doğrulama işleminden geçirilir. 
+	Eğer girdi geçerliyse, veriler yazılacak olan dosyanın tanımlayıcısına yazılır ve yazma işlemi tamamlanır. 
+	Ardından, dosya tanıml+ayıcısı kapatılır, kullanıcının girdisi kaydedilir ve bellekten serbest bırakılır. 
+	Son olarak, döngüden çıkılır ve program başarıyla sonlandırılır.
+*/
 
 void	read_missing_arg_value(int *fd)
 {
