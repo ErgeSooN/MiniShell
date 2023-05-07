@@ -13,8 +13,10 @@
 #include "../../../Include/minishell.h"
 
 /*
-  Komut satırına girilen son karakter text türünde değil ise 258 hata kodunu
-  döndürür ve free_lexer_without_heradoc fonksiyonuna yönlendirme yapar.
+  Komut satırına girilen karakter <<, <, >>, > bunlardan biri ise bu fonksiyona gelir.
+  Eğer metakarakter sonrası bir text yok ise else sorgusuna girer. Eğer farklı bir karakter var ise
+  if sorgusuna girer ve iki sorguda da 258 hata kodunu döndürür.
+  free_lexer_without_heradoc fonksiyonuna yönlendirme yapar.
   Bu fonksiyon bizim bizim terminalde girdiğimiz karakterleri kontrol etmemizi sağlar.
 */
 

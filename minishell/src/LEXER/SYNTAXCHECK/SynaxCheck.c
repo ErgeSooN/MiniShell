@@ -12,6 +12,11 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  lex_list olduğu sürece bu fonksiyona girilir. ve tüm nodeleri geze geze 
+  hata var mı yok mu genel kontrolü burada başlar.
+*/
+
 void	syntax_check(void)
 {
 	t_lexlist	*lex_list;
@@ -33,7 +38,10 @@ void	syntax_check(void)
 }
 
 /*
-  
+  Bu fonksiyon 3 farklı error kontrolü yapar. İlk sorguya birden fazla pipe karakteri
+  varsa girilir ve hata çıktısı sağlanır. İkinci sorguda dosyanın açılabilmesi için
+  gerekli bilgiler var mı yok mu kontrolü yapılır. Üçüncü sorguda ise pipe(boru yolu)
+  hatası var mı yok mu onun kontrolünü yapar.
 */
 
 int	syntax_error_check(t_lexlist *lex_list)

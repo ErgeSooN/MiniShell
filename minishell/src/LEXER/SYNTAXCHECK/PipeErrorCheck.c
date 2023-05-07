@@ -13,7 +13,8 @@
 #include "../../../Include/minishell.h"
 
 /*
-  
+  Eğer pipe karakteri iki defa kullanılmışsa ilk if sorgusuna girip hata mesajı döndürür.
+  Eğer bir defa kullanılmışsa run_miss_arguman fonksiyonuna gidilir. 
 */
 
 int	pipe_error_check(t_lexlist *lex_list)
@@ -26,8 +27,9 @@ int	pipe_error_check(t_lexlist *lex_list)
 }
 
 /* 
-  Eğer pipe karakterinden sonra başka bir argüman girilmemiş ise
-  bu fonksiyona girilir. 
+  Bu fonksiyon eksik girilen argümanı ilk başta ptr değişkenine alır. Daha sonra
+  lex_list'e ekleme yapıp classify fonksiyonu ile sınıflandırır. str_addchar ve own_strjoin
+  fonksiyonları ile de g_core.cmd değişkenine ekleme yapar.
 */
 
 int	run_miss_arg(t_lexlist *lex_list)
