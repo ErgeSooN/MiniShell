@@ -14,7 +14,10 @@
 
 /*
   Bu fonksiyonda fd karakterine 2 lik dizi oluşturulup pipe ile birbirine
-  köprüleme işlemi yapılır
+  köprüleme işlemi yapılır. Daha sonra read_missing_arg fonksiyonuna gidilir
+  eğer ctrl+c atılırsa if sorgusnunn içine girilir ve null döndürülür. Eğer ctrl+c atılmaz 
+  ise ptr ilk başta nulenir daha sonra read ile girdi okunup str_addchar ile c değişkeninden
+  ptr değişkenine aktarım yapılır.
 */
 
 char	*get_missing_arg(void)
@@ -34,7 +37,11 @@ char	*get_missing_arg(void)
 }
 
 /*
-  
+  pid değişkeninini fork ile çatallaştırdıktan sonra child process'i read_missing_arg_value
+  fonksiyonuna yolluyoruz. Daha sonra waitpid fonksiyonu ile pid değişkeninin çıkış durumundaki
+  return değerini WEXITSTATUS fonksiyonu ile eğer pid'nin işlemi bittiyse return_value değerine atıyoruz
+  eğer alınan değer sıgnal_c değerine(ctrl+c) eşitse pipe ile oluşturulan köprüleme işlemindeki fd[0]' ı da 
+  kapatıp freeleme işlemini yapıp returnlüyoruz.
 */
 
 int	read_missing_arg(int *fd)
@@ -57,7 +64,7 @@ int	read_missing_arg(int *fd)
 	return (1);
 }
 
-/*
+/*								~YAPAY ZEKA YORUMU~
   Bu fonksiyon, bir dosya tanımlayıcısı (file descriptor) dizisi alan bir işlevdir. 
   Dizinin ilk elemanı, verilerin okunacağı dosyanın tanımlayıcısıdır ve ikinci elemanı, 
   verilerin yazılacağı dosyanın tanımlayıcısıdır. Fonksiyon, öncelikle yazma işlemi için 
@@ -70,7 +77,9 @@ int	read_missing_arg(int *fd)
 
 /*
   Bu fonksiyon bizim | operatörnden sonra girdi almamızı sağlayan ve bu alınan girdiyi kontrol etmemizi
-  sağlayan fonksiyondur. Readline fonksiyonu ile okuma yaptıktan sonra geçerli bir argüman yok ise 
+  sağlayan fonksiyondur. Readline fonksiyonu ile okuma yaptıktan sonra geçerli bir argüman yok ise tekrardan
+  while döngüsünün başına gelir ve okumaya devam eder. Eğer geçerli bir argüman var ise pipe ile köprü kurduğumuz
+  fd[1] in içine yazma işlemi yapar. Daha sonra da geçmişe ekleme yapıp freeleme işlemi yapar ve çıkış yapılır.
 */
 
 void	read_missing_arg_value(int *fd)
