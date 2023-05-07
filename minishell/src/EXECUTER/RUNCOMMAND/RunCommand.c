@@ -12,6 +12,11 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  bu fonksiyon bizim pipe dan dolayı birden fazla argümanı çalışmamızı 
+  sağlayan fonksiyonun başlangıcıdır.
+*/
+
 void	run_multiple_command(t_cmdlist *cmd_list)
 {
 	int			*fd;

@@ -12,6 +12,12 @@
 
 #include "../../Include/minishell.h"
 
+/*
+  bu fonksiyon artık ayrıştırdığımız argümanları çalıştırmaya başladığımız yer.
+  Eğer pipe yok ise run_single_command fonksiyonuna, eğer pipe var ise run_multiple_command
+  fonksiyonuna yönlendirme yapar.
+*/
+
 void	executer(void)
 {
 	if (!g_core.cmd_table)
