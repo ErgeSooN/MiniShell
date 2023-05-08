@@ -12,6 +12,10 @@
 
 #include "../../Include/minishell.h"
 
+/*
+	--
+*/
+
 void	run_execve(t_cmdlist *cmd_node, int *fd, int fd_index)
 {
 	char	**envlist;
