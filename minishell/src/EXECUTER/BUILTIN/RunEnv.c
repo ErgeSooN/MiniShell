@@ -12,6 +12,12 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	tüm environment variable'ları yazdırmakla sorumludur. Fonksiyon, cmd_node 
+	parametresi olarak bir komut düğümü alır ve cmd_node->outfile üzerindeki 
+	çıktıya environment variable'larını yazdırır.
+*/
+
 void	run_env(t_cmdlist *cmd_node)
 {
 	t_env	*temp_env;

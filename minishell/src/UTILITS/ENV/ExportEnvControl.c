@@ -10,6 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+	Çevresel değişkenin adının doğruluğunu kontrol eder.
+
+	Örneğin, env_arg_control("MY_VAR=123") şeklinde bir çağrı yaptığımızda, env_name_control
+	fonksiyonu MY_VAR=123 stringinin geçerli bir environment variable adı olduğunu doğrular 
+	ve MY_VAR=123 stringinin = karakterinden sonraki kısmını (yani 123'ü) env_arg_control 
+	fonksiyonuna geri döndürür. env_arg_control fonksiyonu, env_name_control fonksiyonunun 
+	doğru bir değer döndürdüğünü kontrol eder ve 1 değerini döndürür.
+*/
+
 #include "../../../Include/minishell.h"
 
 char	*valid_env(char *env)

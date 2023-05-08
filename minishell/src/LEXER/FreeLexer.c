@@ -63,6 +63,11 @@ void	free_lexer_without_heradoc(t_lexlist *stop_list)
 	}
 }
 
+/*
+	Fonksiyon, g_core.lex_table değişkenine atanan lexer yapısının başlangıcına
+	işaret eder ve bu yapının tüm elemanlarını dolaşarak belleklerini serbest bırakır. 
+*/
+
 void	free_lexer(void)
 {
 	t_lexlist	*lexer;

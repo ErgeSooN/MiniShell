@@ -12,6 +12,10 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	metakarakterlerin dinamik olarak tahsis edilmiş bellek alanını serbest bırakır.
+*/
+
 void	free_metachars(void)
 {
 	char	**temp_metachars;
@@ -23,6 +27,11 @@ void	free_metachars(void)
 		free(*(temp_metachars++));
 	free(g_core.metachars);
 }
+
+/*
+	shell ortam tablosundaki tüm değişkenlerin isim ve değerlerini içeren yapıları
+	hafızadan siler ve temizler.
+*/
 
 void	free_envtable(void)
 {

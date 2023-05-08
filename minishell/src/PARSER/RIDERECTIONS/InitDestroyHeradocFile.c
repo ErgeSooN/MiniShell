@@ -12,6 +12,13 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	
+Heredoc okumak için açılan dosyanın kapatılmasını sağlar. Eğer dosya açıksa, dosyanın
+dosya tanımlayıcısı kapatılır ve heredoc okuma işlemi sonlandırılır. Fonksiyon ayrıca
+g_core.heradoc_fd değişkeninin değerini sıfırlar.
+*/
+
 void	close_heradoc_file(void)
 {
 	if (g_core.heradoc_fd > SSTDERR)

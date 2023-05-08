@@ -12,6 +12,16 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	exec_command -> Yürütülecek komutların işlenmesini sağlayan bir fonksiyon.
+		cmd_node = Yürütülecek komutu yani bir komut satırının parçalarını (örneğin, ls -l /)
+		ve bunların bir araya getirilmesi için kullanılacak işaretleri (örneğin, | veya ;) içerir.
+		fd = Dosya tanımlayıcılarını içeren bir dizi. Komutun standart giriş, çıkış ve hata çıkış 
+		dosyalarını yönlendirmek için kullanılır.
+		fd_index = Dosya tanımlayıcıları için dizi indeksi. fd dizisindeki hangi 
+		dosya tanımlayıcısının kullanılacağını belirler.
+*/
+
 void	exec_command(t_cmdlist *cmd_node, int *fd, int fd_index)
 {
 	char	*cmd;
