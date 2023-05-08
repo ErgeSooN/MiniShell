@@ -39,6 +39,10 @@ void	run_unset(t_cmdlist *cmd_node)
 	}
 }
 
+/*
+  Tüm envleri gezerek eşleşen env'yi freeleyerek silmemizi sağlayan fonksiyondur.
+*/
+
 void	delete_env(char *name)
 {
 	t_env	*env;

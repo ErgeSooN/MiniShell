@@ -12,6 +12,11 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  Bu fonksiyon argümanların çalıştırılmaya balandığı yerin başlangıcıdır
+  
+*/
+
 void	run_process(t_cmdlist *cmd_list, int *fd, int fd_index)
 {
 	if (cmd_list->infile != SSTDERR && cmd_list->outfile != SSTDERR)

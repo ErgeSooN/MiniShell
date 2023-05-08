@@ -12,6 +12,10 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  girilen argümanların sayısını bulmamızı sağlayan fonksiyondur.
+*/
+
 int	get_array_len(char **array)
 {
 	int	count;

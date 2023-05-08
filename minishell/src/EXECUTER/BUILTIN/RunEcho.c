@@ -12,6 +12,14 @@
 
 #include "../../../Include/minishell.h"
 
+/* 
+  Bu fonksiyon bizim echo yani çıktı almamızı sağlayan fonksiyondur.
+  eğer '-n' parametresi var ise is_n parametresi 1 olur ve newline 
+  bastırılmadan çıktı sağlanır. Eğer birden fazla yazdırılacak argüman
+  var ise ikinci if sorgusunda space boşluğu bırakılıp while döngüsünde 
+  yazdırma işlemi devam ettirilir.
+*/
+
 void	run_echo(t_cmdlist *cmd_node)
 {
 	char	**path;

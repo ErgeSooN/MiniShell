@@ -12,6 +12,12 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  Bu fonksiyon bizim terminale girilen argümanın kıyaslamasını
+  yaptığımız fonksiyondur. Eşleşmeye göre macrolarda tanımladığımız
+  komutu döndürmemizi sağlar.
+*/
+
 int	is_builtin(char *cmd)
 {
 	if (str_compare(cmd, "echo"))
@@ -30,6 +36,11 @@ int	is_builtin(char *cmd)
 		return (EXIT);
 	return (0);
 }
+
+/*
+  Bu fonksiyon bizim komutları çalıştırmak için yönlendirme yaptığımız yerdir.
+  ilk baştaki if sorgusuna eğer pipe karkateri var ise girilir.
+*/
 
 void	run_builtin(t_cmdlist *cmd_node, int builtin, int *fd, int fd_index)
 {

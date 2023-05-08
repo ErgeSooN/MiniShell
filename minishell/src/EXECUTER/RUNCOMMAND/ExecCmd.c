@@ -27,6 +27,12 @@ void	exec_command(t_cmdlist *cmd_node, int *fd, int fd_index)
 		run_execve(cmd_node, fd, fd_index);
 }
 
+/*
+  Bu fonksiyon komut satırında genellikle dosya yolu belirttiği zaman 
+  kullanılır. Son '/' karakterinden itibaren komut satırının sonuna kadar
+  saymamızı sağlar.
+*/
+
 char	*get_cmd(char *cmd)
 {
 	int		command_len;

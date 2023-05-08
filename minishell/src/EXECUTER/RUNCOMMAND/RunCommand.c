@@ -14,7 +14,9 @@
 
 /*
   bu fonksiyon bizim pipe dan dolayı birden fazla argümanı çalışmamızı 
-  sağlayan fonksiyonun başlangıcıdır.
+  sağlayan fonksiyonun başlangıcıdır. Bu fonksiyon cmd list devam ettiği
+  sürece çalışır. Eğer cmd_list'i forkladıktan sonra child_process'i 
+  run_process fonksiyonuna göndeririz.
 */
 
 void	run_multiple_command(t_cmdlist *cmd_list)

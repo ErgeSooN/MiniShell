@@ -12,6 +12,14 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  Bu fonksiyon bizim cd komutunun çalıştırılmaya başlandığı yerdir.
+  İlk başta get_array_len fonksiyonu ile argüman sayısını aldığımız yerdir.
+  Eğer ikiden fazla argüman var ise hata kodu döndürür. Eğer iki tane argüman var ise
+  cd_double_arg fonksiyonuna gidilir ve 2. argüman olan dosya dizinine gitmaiz sağlanır.
+  Eğer bir argüman var ise de HOME dizinine gitmemizi sağlar.
+*/
+
 void	run_cd(t_cmdlist *cmd_node)
 {
 	int		array_len;
@@ -27,6 +35,13 @@ void	run_cd(t_cmdlist *cmd_node)
 	else
 		cd_single_arg();
 }
+
+/*
+  Bu fonksiyona sadece cd argümanı var ise girilir. Bu fonksiyon bizim 
+  HOME dizinine gitmemizi sağlayan fonksiyondur. Eğer HOME dizini bulunmuyorsa
+  error döndürüp 1 hatası döndürür. (istem çağrısının başarısız olduğunu ve 
+  geri döndüğü hata kodunun 1 olduğunu gösterir)
+*/
 
 void	cd_single_arg(void)
 {
@@ -50,6 +65,11 @@ void	cd_single_arg(void)
 	g_core.exec_output |= 1;
 }
 
+/*
+  Bu fonksiyon bizim dosya yolu belirttiğimiz zaman gelinen fonksiyondur.
+  Eğer path geçerli değil ise hata kodu döndürülür ve fonksiyondan çıkılır.
+*/
+
 void	cd_double_arg(t_cmdlist *cmd_node)
 {
 	if (!change_dir(cmd_node->path[1]))
@@ -60,6 +80,16 @@ void	cd_double_arg(t_cmdlist *cmd_node)
 		return ;
 	}
 }
+
+/*
+  Bu fonksiyon bizim dizin değiştirmek için kullandığımız fonksiyondur.
+  İlk başta getcwd fonksiyonu ile bulunmuş olduğumuz dizini old pwd fonksiynonuna 
+  kopyalıyoruz ki eğer yeni dosya yolunda bir hata var ise elimizde bulunabilsin.
+  daha sonra chdir fonksiyonu ile girilen dosya yoluna geçmemizi sağlarız eğer bir hata olur 
+  ise -1 döndürür ve freeleme işlemi yapılır. Daha sonra update_pwd_from_export fonksiyonuna
+  gelinir. Eğer çevresel değişken değiştirilebilmiş ise oldpwd çevresel değişkeni de değiştirilir.
+  Eğer değiştirilemez ise delete_env fonksiyonu ile OLDENW değişkeni freelenir.
+  */
 
 int	change_dir(char *path)
 {
@@ -85,6 +115,13 @@ int	change_dir(char *path)
 		free(oldpwd);
 	return (1);
 }
+
+/*
+  Eğer çevresel değişken değiştirilemez ise if sorgusunun içerisine girilir
+  ve eski konumu geri yazdırılır.
+  Eğer değiştirilebilirse update env 0 döndüreceği için fonksiyon direkt 1 
+  döndürür.
+*/
 
 int	update_pwd_from_export(char *pwd_name, char *pwd_content)
 {
