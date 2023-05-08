@@ -12,6 +12,11 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  Bu fonksiyon girilen tüm değerlerin numerik olup olmadığını 
+  kontrol eder. Eğer numerik değilse 0 döndürür.
+*/
+
 int	is_all_numeric(char *text)
 {
 	while (text && *text)
@@ -22,6 +27,18 @@ int	is_all_numeric(char *text)
 	}
 	return (1);
 }
+
+/*
+  Bu fonksiyon bizim exit komutumuz için gerekli olan fonksiyondur.
+  ilk başta get _array len ile argüman sayısını 1 den itibaren saymaya başladıktan sonra
+  (exit'i saymamak için) if sorgusuna geliyor. Eğer exit dışında 1'den fazla
+  fonksiyon girilmiş ise fazla argüman hatasına yönlendirme yapar.
+  Eğer exit dışında 1 tane argüman girilmiş ise girilen sayımnın numerik olup olmadığını kontrol eder.
+  Eğer numerik ise girilen numarayla çıkış işlemi yapılır.
+  En sonunda freeleme işlemi yaptıktan sonra çıkış tamamlanır.
+
+  ///// satır 67 freeleme işlemlerinde kaldık
+*/
 
 void	run_exit(t_cmdlist *cmd_node)
 {
