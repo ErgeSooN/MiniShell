@@ -12,6 +12,12 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+  Bu fonksiyon bizim şuanda oluğumuz dizini göstermemizi 
+  sağlayan fonksiyondur. getcwd ile olduğumuz çalışma dizininin
+  yolunu gösterir.
+*/
+
 void	run_pwd(t_cmdlist *cmd_node)
 {
 	char	cwd[256];
