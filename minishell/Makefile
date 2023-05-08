@@ -1,4 +1,4 @@
-USERNAME = bbolat
+USERNAME = ayaman
 NAME = minishell
 CFLAGS = $(INCLUDE) -Wall -Werror -Wextra -g
 INCLUDE = -IInclude/ -I/Users/$(USERNAME)/goinfre/homebrew/Cellar/readline/8.2.1/include
