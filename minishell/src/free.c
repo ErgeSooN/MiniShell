@@ -12,6 +12,11 @@
 
 #include "../Include/minishell.h"
 
+/*
+	Daha önce ayarlanmış olan metakarakterlerin ve ortam değişkenlerinin bellek alanlarını
+	serbest bırakır. Readline kütüphanesi tarafından tutulan girdi geçmişini de siler.
+*/
+
 void	free_core(void)
 {
 	free_metachars();

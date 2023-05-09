@@ -13,7 +13,24 @@
 #include "../../Include/minishell.h"
 
 /*
-	--
+	run_execve -> fork ile child_process oluşturur. Execve işlevi çağrılır ve yeni
+	bir program dosyası yüklenir. Bu işlem, mevcut işlemi değiştirir ve yüklenen
+	programın işlevleri çalıştırılır.
+
+	create_dup -> Mevcut işlemin dosya tanımlayıcıları kopyalanır. Bu işlem, 
+	giriş/çıkış yönlendirmesi veya boru hatları gibi işlemleri gerçekleştirmek için kullanılır.
+	
+	get_env_cpy -> Mevcut ortamın bir kopyası alınır. Bu kopya, execve() işlevi 
+	tarafından kullanılacak olan ortam listesi olarak kullanılır.
+
+	*execve == -1 olursa program dosyası yüklenemediği anlamına gelir. Hata mesajı
+	yazdırılarak bellek alanları serbest bırakılıp exit ile program sonlandırılır.
+	127 hata kodu yüklenen program dosyasının bulunamaması durumunda kullanılır.
+
+	Son if bloğu child processin işlemi tamamlamasını ve çıkış durumunu raporlamasını
+	beklemek için kullanılır. waitpid(), child processin işlem tamamlama durumunu bekleyen
+	parent processe bilgi verir. parent_process bu bilgiyi g_core.exec_output değişkenine atar.
+	wexitstatus -> bir işlem tamamlanana kadar child_processin çıkış durumunu beklemek için kullanılır. 
 */
 
 void	run_execve(t_cmdlist *cmd_node, int *fd, int fd_index)

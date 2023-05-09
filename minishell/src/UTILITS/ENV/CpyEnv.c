@@ -12,6 +12,10 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	Mevcut çevresel değişken sayısı hesaplanır.
+*/
+
 int	get_env_len(void)
 {
 	t_env	*env_list;
@@ -27,6 +31,14 @@ int	get_env_len(void)
 	}
 	return (count);
 }
+
+/*
+	Programın çalışma ortamındaki çevresel değişkenlerin (environment variables) kopyalarını
+	alarak, kopyaları tutan bir dizi döndürür. Bu kopyalar daha sonra programın farklı
+	bölümlerinde güvenli bir şekilde kullanılabilir.
+
+	-env_table, çevresel değişkenlerin tutulduğu bir bağlı liste içerir.
+*/
 
 char	**get_env_cpy(void)
 {
@@ -53,6 +65,11 @@ char	**get_env_cpy(void)
 	}
 	return (envlist);
 }
+
+/*
+	bir ortam listesi dizisini serbest bırakmak için kullanılır.
+*/
+
 
 void	free_env_cpy(char **envlist)
 {

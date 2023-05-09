@@ -13,7 +13,6 @@
 #include "../../Include/minishell.h"
 
 /*
-	---ÇOK KARIŞIK, TEKRAR EDİLMESİ GEREKİYOR---
 	create_dup -> Komutun girdi ve çıktı yönlendirmelerini gerçekleştirir.
 	Girdi ve çıktı yönlendirmelerine göre dup2 fonksiyonunu kullanarak stdin ve
 	stdout akışlarını uygun dosyalar veya dosya tanımlayıcılarıyla değiştirir.
