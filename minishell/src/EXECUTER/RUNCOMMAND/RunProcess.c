@@ -28,6 +28,31 @@ void	run_process(t_cmdlist *cmd_list, int *fd, int fd_index)
 	exit(g_core.exec_output);
 }
 
+/*
+	Paralel olarak yürütülen tüm işlemleri beklemek ve çıkış durumlarını 
+	işlemek için kullanılır.Her bir komutun işlemi tamamlanana kadar bekleme 
+	işlemi yapar. Eğer komut zinciri içinde son komut ise, çıkış durumu 
+	"g_core.exec_output" değişkeninde tutulur. Eğer son komut değilse, çıkış 
+	durumu görmezden gelinir.
+
+	"waitpid" fonksiyonunu kullanarak, child_processin (yürütülen komut) 
+	tamamlanmasını bekler. İlk parametre olarak "cmd_list->pid" kullanılır ve bu,
+	bekleme yapılacak olan child_processin kimliğidir. İkinci parametre "0"ayarlanır,
+	çünkü bekleme sırasında hiçbir ek bilgiye ihtiyaç duyulmaz. Üçüncü parametre 
+	"0" kullanılır, çünkü beklemeyi engelleyen herhangi bir sinyal olmadığından emin olunur.
+*/
+
+/*
+	waitpid(pid, status, options);
+	waitpid(child_p pid, child_p durumu-örn null olursa durum bilgisi döndürmez-, bekleme davranışları)
+
+	WEXİTSTATUS -> kullanıcının programın başarılı bir şekilde çalıştığını veya
+	bir hatayla karşılaştığını anlamasına yardımcı olur.
+	g_core.exec_output'ta işlem çıkış durumunu saklar. Bu işlem çıkış 
+	durumu, son çalıştırılan komutun çıkış durumunu temsil eder. Bu çıkış durumu, 
+	genellikle 0 (başarılı) veya farklı bir değer (hata durumu) olacaktır.
+*/
+
 void	wait_all(void)
 {
 	t_cmdlist	*cmd_list;
