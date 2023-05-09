@@ -33,10 +33,20 @@ void	expand_dollar(char **dst, char **src)
 		expand_dollar_value(dst, src);
 }
 
+/*
+	Bu fonksiyonun amacı, belirtilen karakter dizisine
+	yalnızca bir dolar işareti "$" eklemektir.
+*/
+
 void	single_dollar(char **dst)
 {
 	str_addchar(dst, *DOLLAR);
 }
+
+/*
+	$ işaretinden sonra bir başka $ işareti bulunduğunda çağrılır.
+	(++) diğer karaktere geçmeyi sağlar.
+*/
 
 void	double_dollar(char **dst, char **src)
 {
@@ -48,6 +58,12 @@ void	double_dollar(char **dst, char **src)
 	(*src)++;
 }
 
+/*
+	$ işaretinden sonra ? işareti bulunduğunda çağırılır.
+	Shellde ? karakteri, son yürütülen komutun çıkış durumu veya
+	çıkış kodunu temsil eder.
+*/
+
 void	question_mark(char **dst, char **src)
 {
 	char	*line;
@@ -57,6 +73,20 @@ void	question_mark(char **dst, char **src)
 	free(line);
 	(*src)++;
 }
+
+/*
+	expand_envs ile $ işaretinden sonra gelen karakter dizisindeki tüm 
+	çevresel değişkenleri (environment variable) genişletir.
+
+	tanımlanan ptr $ işaretinden sonra gelen ilk karaktere işaret eder.
+	Karakter boşluk veya tırnak işareti değilse veya bir $ işaretine rastlanmazsa,
+	count değişkeni artırılır ve ptr işaretçisi bir sonraki karaktere ilerletilir. 
+	$ işaretinden sonra gelen karakter dizisindeki karakter sayısını belirler.
+
+	ft_strpcpy ile ptr'de $ işaretinden sonra gelen karakter dizisinin kopyası
+	oluşturulur. Son olarak, expand_envs işlevi kullanılarak karakter dizisi genişletilir
+	ve genişletilmiş karakter dizisi dst karakter dizisiyle birleştirilir.
+*/
 
 void	expand_dollar_value(char **dst, char **src)
 {
