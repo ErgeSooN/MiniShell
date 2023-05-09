@@ -6,13 +6,13 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:27:42 by ayaman            #+#    #+#             */
-/*   Updated: 2023/05/09 15:27:29 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/09 15:28:53 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
 
-/**/
+/*as*/
 
 void	run_export(t_cmdlist *cmd_node)
 {
