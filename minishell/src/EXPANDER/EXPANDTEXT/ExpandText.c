@@ -13,20 +13,11 @@
 #include "../../../Include/minishell.h"
 
 /*
-	string içinde geçen $ veya ~ karakterlerinin uygun şekilde 
-	genişletilmesini sağlar.
-	
-
-	$ -> expand_dollar fonksiyonu çağırılır. 
-	$ karakterinden sonra gelen stringi okur ve bu stringin bir 
-	çevresel değişkenin adı olduğunu varsayar. Bu değişkenin değerini
-	g_core.env_table listesinden okuyarak genişletilmiş stringe ekler.
-
-	~ -> expand_envs fonksiyonu çağırılır. 
-	1.parametre olarak aldığı char pointer'ı genişletilmiş bir string 
-	olarak doldurur. 2.parametre olara bu genişletmenin yapılacağı string 
-	verilir ("HOME"). g_core.env_table listesinde bu isimle bir 
-	çevresel değişken arar ve değerini genişletilmiş stringe ekler.
+	g_core.env_table çeşitli ortam değişkenlerini ve bunların 
+	değerlerini içerir. while ile t_env yapısındaki tüm öğeleri kontrol eder 
+	ve ptr değişkeni ile karşılaştırır. Eğer ptr, t_env yapısındaki bir ortam 
+	değişkeni adı ile eşleşirse, genişletilmiş metni oluşturmak için t_env 
+	yapısındaki değeri kullanır.
 */
 
 void	expand_envs(char **dst, char *ptr)
@@ -44,6 +35,22 @@ void	expand_envs(char **dst, char *ptr)
 		copy_envs = copy_envs->next;
 	}
 }
+
+/*
+	string içinde geçen $ veya ~ karakterlerinin uygun şekilde 
+	genişletilmesini sağlar.
+	
+
+	$ -> expand_dollar fonksiyonu çağırılır. 
+	$ karakterinden sonra gelen stringi okur ve bu stringin bir 
+	çevresel değişkenin adı olduğunu varsayar. Bu değişkenin değerini
+	g_core.env_table listesinden okuyarak genişletilmiş stringe ekler.
+
+	~ -> expand_envs fonksiyonu çağırılır. 
+	HOME ortam değişkeninin değerini alır ve bu değeri genişletilmiş metnin 
+	sonucu olarak kullanır. g_core.env_table listesinde bu isimle bir 
+	çevresel değişken arar ve değerini genişletilmiş stringe ekler.
+*/
 
 void	expand_order(char **dst, char **src)
 {
