@@ -44,6 +44,21 @@ void	run_multiple_command(t_cmdlist *cmd_list)
 	wait_all();
 }
 
+/*
+	Görevi tek bir komutu çalıştırmaktır. "infile" ve "outfile"
+	girdi ve çıktı dosyalarının hangi dosya tanımlayıcılarına(fd) bağlanacağını 
+	belirler.
+	Eğer her ikisi de "SSTDERR" olarak ayarlanmamışsa "exec_command" 
+	fonksiyonu çağrılır.
+
+	exec_command'da son parametre olan "-1", yürütülen komutun standart hata 
+	akışını gösterir. Bu değer "-1" iken yürütülen komut bir hata verirse, 
+	hata mesajı standart çıktı akışında görünecektir. Eğer "-1" yerine başka 
+	bir sayı verilirse, o sayıya karşılık gelen dosya tanımlayıcısı standart
+	hata akışını temsil eder ve hata mesajları o dosya tanımlayıcısına 
+	yönlendirilir.
+*/
+
 void	run_single_command(t_cmdlist *cmd_list, int *fd)
 {
 	if (cmd_list->infile != SSTDERR && cmd_list->outfile != SSTDERR)
