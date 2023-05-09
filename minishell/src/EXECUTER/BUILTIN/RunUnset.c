@@ -12,6 +12,18 @@
 
 #include "../../../Include/minishell.h"
 
+/*
+	unset : ortam değişkenlerini kaldırmak için kullanılır.
+
+	İlk olarak, "path" dizisinin uzunluğunu hesaplar.
+	While içinde, mevcut ortam değişkeninin geçerli olup olmadığını "env_arg_control"
+	fonksiyonunu çağırarak kontrol eder. Geçerli değilse, "print_error" ile hata mesajı 
+	yazdırır ve bir hata oluştuğunu belirtmek için global "g_core.exec_output" değişkenini
+	1 olarak ayarlar. Geçerli ise, ortam değişkenini kaldırmak için "delete_env" 
+	fonksiyonunu çağırır ve başarıyı belirtmek için global "g_core.exec_output" değişkenini 
+	0 olarak ayarlar.
+*/
+
 void	run_unset(t_cmdlist *cmd_node)
 {
 	char	**temp_name;
