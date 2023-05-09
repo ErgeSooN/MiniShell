@@ -69,7 +69,9 @@ char	*env_name_control(char *env)
 }
 
 /*
-  
+  env_name_control kontrolünden sonra eğer null döndürmez ise girilen argüman
+  doğru olduğu için daha fazla işlem yapmaz ama doğru değil ise argümanın hatalı
+  olduğunu belirtip gerekli hata kodunu döndürür.
 */
 
 int	env_arg_control(char *env)

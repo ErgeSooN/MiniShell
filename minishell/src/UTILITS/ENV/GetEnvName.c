@@ -12,7 +12,7 @@
 
 #include "../../../Include/minishell.h"
 
-/*Çevresel değişkenlere malloc ile yer ayırıp bunları hafızada tutup geri dödürüyoruz*/
+/*Çevresel değişkenlere malloc ile yer ayırıp bunları hafızada tutup geri dödürüyoruz.*/
 char	*get_env_name(char *content)
 {
 	int		env_name_len;

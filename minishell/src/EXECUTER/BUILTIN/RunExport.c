@@ -71,7 +71,13 @@ void	single_export_arg(t_cmdlist *cmd_node)
 
 /*
   Bu fonksiyon birden fazla argüman girilmiş ise kullanılır.
-  Bu fonksiyonun amacı çevresel değişken eklemektir.
+  Bu fonksiyonun amacı çevresel değişken eklemektir. env_arg_control
+  fonksiyonunda gerekli kontroller yapıldıktan sonra eğer hatalı bir
+  argüman girilmiş ise return döndürürlür. Eğer hatalı bir argüman girilmemiş ise
+  get_env_name fonksiyonuna gidilir. Arg değişkenine env değişkeninin başlangıcı
+  gönderildikten sonra kalan yerin ilk karakterinde '=' kontorlü yapılır. Eğer 
+  env değiştirilebilir ise freeleme işlemi yapılıp fonksiyondan çıkılır. Eğer
+  eşleşen yok ise add_newenv fonksiyonu ile çevresel değişkenlere ekleme yapılır.
 */
 
 void	double_export_arg(char *env_cmd)
@@ -99,6 +105,11 @@ void	double_export_arg(char *env_cmd)
 		update_env(env_cmd, NULL);
 	free(temp_envname);
 }
+
+/*
+  Bu fonksiyon tüm env'leri gezerek eğer eşleşen çevresel değişken var ise
+  bunları update_env fonksiyonu ile değiştirir. Eğer eşleşen yok ise 0 döndürür.
+*/
 
 int	change_env(char *envname, char *arg, int is_equal)
 {
