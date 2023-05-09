@@ -14,9 +14,6 @@
 
 /*
 	fill_cmdtable -> fill_cmdnode ile düğümlere komut öğelerini ekler.
-	
-	fill_cmdnode -> komut düğümünün yolunu (path) oluşturmak için kullanılır.
-	Bunu create_path işlevini kullanarak yapar.
 */
 
 void	fill_cmdtable(void)
@@ -36,6 +33,11 @@ void	fill_cmdtable(void)
 		temp_cmdtable = temp_cmdtable->next;
 	}
 }
+
+/*
+	fill_cmdnode -> komut düğümünün yolunu (path) oluşturmak için kullanılır.
+	Bunu create_path işlevini kullanarak yapar.
+*/
 
 void	fill_cmdnode(t_cmdlist *node, t_lexlist **lex_list)
 {

@@ -20,10 +20,6 @@
 	(*lex_list)->next işaretçisi kullanılarak dosya adı içeriği elde edilir ve filename 
 	değişkenine atanır. Ancak, (*lex_list)->next NULL işaretçisi ise, dosya adı atanmaz.
 
-	add_filelist -> Dosya listesine yeni bir dosya eklenir. Bu yeni dosyanın dosya adı,
-	filename değişkeninden ve özel karakter, (*lex_list)->content işaretçisi içeriğinden elde edilir. 
-
-	temp_filelist->> işaret edilen dosyanın özellikleri ayarlar.
 */
 
 int	create_new_filelist(t_cmdlist *node, t_lexlist **lex_list)
@@ -48,6 +44,14 @@ int	create_new_filelist(t_cmdlist *node, t_lexlist **lex_list)
 		(*lex_list) = (*lex_list)->next;
 	return (1);
 }
+
+/*
+	add_filelist -> Dosya listesine yeni bir dosya eklenir. Bu yeni dosyanın dosya adı,
+	filename değişkeninden ve özel karakter, (*lex_list)->content işaretçisi içeriğinden elde edilir. 
+	
+	temp_filelist->> işaret edilen dosyanın özellikleri ayarlar.
+
+*/
 
 t_filelist	*add_filelist(t_filelist **file_list, char *filename, char *meta)
 {
