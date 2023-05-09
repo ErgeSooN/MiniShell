@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ExportEnvControl.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayaman <ayaman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:33:35 by ayaman            #+#    #+#             */
-/*   Updated: 2023/01/19 13:33:35 by ayaman           ###   ########.fr       */
+/*   Updated: 2023/05/09 16:37:29 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 */
 
 #include "../../../Include/minishell.h"
+
+/*
+  Bu fonksiyon çevresel değişken olarak eklemek istediğimiz argümanın adının kontrolünü sağlayan
+  fonksiyondur. Eğer geçerli karakterler yok ise NULL döndürür. Eğer karakterler geçerli ise 
+  env değişkenini geri döndürür.
+*/
 
 char	*valid_env(char *env)
 {
@@ -39,6 +45,13 @@ char	*valid_env(char *env)
 	return (env);
 }
 
+/*
+  Bu fonksiyon çevresel değişkenlerin isim kontrolünü yapmamızı sağlar. Eğer
+  girilen argümanın içerisi boş ise veya boşluk veya = var ise null döndürür.
+  Daha sonra komut satırını kontrol etmek için valid_env fonksiyonuna gidilir.
+  
+*/
+
 char	*env_name_control(char *env)
 {
 	char	*env_temp;
@@ -54,6 +67,10 @@ char	*env_name_control(char *env)
 	else
 		return (env_temp);
 }
+
+/*
+  
+*/
 
 int	env_arg_control(char *env)
 {
