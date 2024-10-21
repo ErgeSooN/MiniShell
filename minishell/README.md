@@ -1,7 +1,5 @@
 # minishell
 
-<img width="863" alt="Ekran Resmi 2023-01-30 ÖS 3 07 15" src="https://user-images.githubusercontent.com/87010618/215487325-9d6f5ba0-4a83-4645-b2e7-20095f534cd0.png">
-
 # Setup
 
 Minishelli çalıştırmak için readline kütüphanesini indirmek gerekmektedir.
